@@ -1,0 +1,7 @@
+<text>       ::= <text> | <alph> | <white> | <digit>
+<question>   ::= "ENUM" <text> <white>
+<op-letter>  ::= "A" | "B" | "C" | "D" | "E"
+<op-wrong>   ::= <op-letter> ")" <text>
+<op-right>   ::= <op-letter> ":CORRECT)" <text>
+<option>     ::= <op-wrong> | <op-right>
+<exam>       ::= "---" <question> <option> <option> <option> <option> <white>
