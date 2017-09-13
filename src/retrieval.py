@@ -35,7 +35,6 @@ paths_dict = question_paths_in_graph(artcol, first_q)
 # laws in lexml/ and getting the questions at OAB/raw/
 result = sqa_justified_questions('doc/justify.txt', 'lexml/', 'OAB/raw/', rm_stopwords=True) 
 
-
 """
 
 
