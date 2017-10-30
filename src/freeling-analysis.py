@@ -68,7 +68,7 @@ def clean_article(article_string):
                   (re.sub("Art. [0-9]+(\.|º)","",
                           article_string.replace("\n",""))))
 
-def sqa_justified_synset_approach(justification_path, laws_path, exams_path):
+def sqa_justified_synset_approach(justification_path, laws_path, exams_path, separate=False):
     # sqa = shallow question answering
     # justification file must be in the format described in docs.
     # see ./retrieval.py
@@ -122,80 +122,6 @@ def get_senses_from_text(input_text):
                     senses[sense_pair[0]] = sense_pair[1]/total
     return senses
 
-def analyze_list_of_text(input_list_text):
-    # input list of text
-    # output list of list of sentences
-    assert(isinstance(input_list_text,list) or isinstance(input_list_text,tuple))
-    for i in input_list_text:
-        assert(isinstance(i,str))
-    list_analyzed = [sen.analyze(tg.analyze(mf.analyze(sp.split(sid,tk.tokenize(clean_article(text)), False)))) for text in input_list_text]
-        # list_analyzed does NOT contain WSD senses yet
-    all_sentences = []
-    entry_has_sentences = {i:[] for i in range(len(list_analyzed))}
-    counter = 0
-    for entry_index in range(len(list_analyzed)):
-        for sentence in list_analyzed[entry_index]:
-            all_sentences.insert(len(all_sentences),sentence)
-            entry_has_sentences[entry_index].insert(len(entry_has_sentences[entry_index]), counter)
-            # sentence_in_entry[counter] = entry_index
-            counter += 1
-            # entry_has_sentences[i] means that the entry indexed by i
-            # contains exactly the sentences in all_sentences indexed
-            # by values in entry_has_sentences[i]
-    all_sentences = ukb.analyze(all_sentences)
-    output_analysis = [[] for i in range(len(list_analyzed))]
-    for entry_index in range(len(list_analyzed)):
-        new_sentences = []
-        for sentence in [all_sentences[i] for i in entry_has_sentences[entry_index]]:
-            words = []
-            for word in sentence.get_words():
-                weight_sum = 0
-                for sense in word.get_senses():
-                    weight_sum += sense[1]
-                word.set_senses(list(map(
-                    (lambda x: [x[0],x[1]/weight_sum]),
-                    word.get_senses())))
-                words.insert(len(words),word)
-            new_sentences.insert(len(new_sentences),freeling.sentence(words))
-                # It was necessary to create new sentences because freeling
-                # recreates the original words using the .get_words() method,
-                # making the .sense_senses before irrelevant
-        output_analysis[entry_index] = new_sentences
-    return output_analysis
-    
-def get_senses_from_list_of_text(input_list_text):
-    # Receives a list of strings, returns a list of dictionaries of
-    # senses (value:key is sense:weight)
-    analyzed_texts = analyze_list_of_text(input_list_text)
-    output_senses = [{} for i in analyzed_texts]
-    for entry_index in range(len(analyzed_texts)):
-        senses = {}
-        for sentence in analyzed_texts[entry_index]:
-            for word in sentence.get_words():
-                for sense_pair in word.get_senses():
-                    if sense_pair[0] in senses:
-                        senses[sense_pair[0]] += sense_pair[1]
-                    else:
-                        senses[sense_pair[0]] = sense_pair[1]
-        output_senses[entry_index] = senses
-    return tuple(output_senses)
-
-    # for entry_index in range(len(list_analyzed)):
-    #     senses = {}
-    #     for sentence in [all_sentences[i] for i in entry_has_sentences[entry_index]]:
-    #         for word in sentence.get_words():
-    #             total = 0
-    #             for sense_pair in word.get_senses():
-    #                 # sense_pair is (sense, value)
-    #                 total += sense_pair[1]
-    #             for sense_pair in word.get_senses():
-    #                 if sense_pair[0] in senses:
-    #                     senses[sense_pair[0]] += sense_pair[1]/total
-    #                 else:
-    #                     senses[sense_pair[0]] = sense_pair[1]/total
-    #     output_analysis[entry_index] = senses
-    # return tuple(output_analysis)
-
 # this uses FORMS not senses
 #   (was very important for sanity check)
 # def get_senses_from_text(input_text):
@@ -233,58 +159,8 @@ def get_article_senses(article):
 #     return law_urn, list(map(get_article_senses, articles))
 
 def get_law_senses(law_articles):
-    # This does joint WSD
-    return apply_to_law_text(get_senses_from_list_of_text,law_articles)
-
-
-def write_conll_law_text(law, output_file_name):
-    # This uses WSD for all sentences together
-    law_urn, articles = law
-    art_nrs, art_txts = zip(*articles)
-    with open(output_file_name, 'w') as f:
-        write_conll_justified_sentences
-        f.write(write_freeling_sentences_analysis_conll(art_txts))
-    return None
-
-def write_freeling_sentences_analysis_conll(input_list_text):
-    # Please don't use this out of context.
-    # this is pretty terrible
-    assert(isinstance(input_list_text,list) or isinstance(input_list_text,tuple))
-    for i in input_list_text:
-        assert(isinstance(i,str))
-    list_analyzed = [sen.analyze(tg.analyze(mf.analyze(sp.split(sid,tk.tokenize(clean_article(text)), False)))) for text in input_list_text]
-    # list_analyzed does NOT contain WSD senses yet
-    all_sentences = []
-    entry_has_sentences = {i:[] for i in range(len(list_analyzed))}
-    counter = 0
-    for entry_index in range(len(list_analyzed)):
-        for sentence in list_analyzed[entry_index]:
-            all_sentences.insert(len(all_sentences),sentence)
-            entry_has_sentences[entry_index].insert(len(entry_has_sentences[entry_index]), counter)
-            # sentence_in_entry[counter] = entry_index
-            counter += 1
-            # entry_has_sentences[i] means that the entry indexed by i
-            # contains exactly the sentences in all_sentences indexed
-            # by values in entry_has_sentences[i]
-    all_sentences = ukb.analyze(all_sentences)
-    #
-    new_sentences = []
-    for sentence in all_sentences:
-        words = []
-        for word in sentence.get_words():
-            weight_sum = 0
-            for sense in word.get_senses():
-                weight_sum += sense[1]
-            word.set_senses(list(map(
-                (lambda x: [x[0],x[1]/weight_sum]),
-                word.get_senses())))
-            words.insert(len(words),word)
-        new_sentences.insert(len(new_sentences),freeling.sentence(words))
-        # It was necessary to create new sentences because freeling
-        # recreates the original words using the .get_words() method,
-        # making the .sense_senses before irrelevant
-    text = tuple(new_sentences)
-    return outputter.PrintResults(text)
+    law_urn, articles = law_articles
+    return law_urn, list(map(get_article_senses, articles))
 
 def write_freeling_analysis_conll(input_text):
     # Please don't use this out of context.
@@ -324,7 +200,7 @@ def write_freeling_analysis_conll(input_text):
     # output.close()
     return outputter.PrintResults(text)
 
-def add_temporary_sense_node(graph, artcol, text_senses, label, to_nodes=True):
+def add_temporary_sense_node(graph, artcol, text, label, to_nodes=True):
     """
     article_collection is where graph and tfidf-calculation happen and
     label is question number in str.
@@ -338,7 +214,7 @@ def add_temporary_sense_node(graph, artcol, text_senses, label, to_nodes=True):
     """
     graph.add_node(label)
     # text_senses should be dict {sense:weight}
-    # text_senses = get_senses_from_text(text)
+    text_senses = get_senses_from_text(text)
     label_tfidf = artcol.tfidf_vectorize(text_senses)
     # to add edges only to the articles, and not every node
     for node_id in artcol.ids.keys():
@@ -473,6 +349,16 @@ def fl_read_laws_into_artcollection(laws_path):
 #         laws = SenseArticleCollection(laws_list, rm_stopwords)
 #     return laws
 
+
+def write_conll_law_text(law, output_file_name):
+    # This uses WSD for all sentences together
+    law_urn, articles = law
+    art_nrs, art_txts = zip(*articles)
+    with open(output_file_name, 'w') as f:
+        write_conll_justified_sentences
+        f.write(write_freeling_sentences_analysis_conll(art_txts))
+    return None
+
 def write_conll_justified_sentences(justification_path, laws_path, exams_path, output_name, output_path="./"):
     # justification file must be in the format described in docs.
     # see ./retrieval.py
@@ -573,4 +459,3 @@ def evaluate_correct_answer(answer):
 #         else:
 #             wrong.insert(0,question)
 #     return correct, wrong, undecided
-    
