@@ -384,6 +384,18 @@ def check_justification_correct_items(question_paths):
         correct_items[question] = (selected_article in justification)
     return correct_items
 
+def check_answers_items(question_paths):
+    # return True if answer chosen by shortest path is the correct one
+    chosen_questions = get_minimum_paths(question_paths)
+    result = {}
+    for question, item_tuple in chosen_questions.items():
+        correct_item = question.valid
+        if correct_item in item_tuple[1]:
+            result[question] = True
+        else:
+            result[question] = False
+    return result
+            
 
 #
 ## assign article to question
