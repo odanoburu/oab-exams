@@ -31,7 +31,8 @@ token p = do skipSpaces
 
 word :: ReadP String
 -- if newline scheme is \r\n, won't work. if \n \n instead of \n\n,
--- won't work
+-- won't work.
+-- maybe should catch only \n\n, which are used as paragraph separator
 word = do skipSpaces
           w <- munch1 (\c -> not $ isSpace c)
           ns <- munch (\c -> c == '\n')
@@ -76,12 +77,10 @@ instance ToJSON Letter where
 --
 -- OAB parsers
 examQuestions :: ReadP [Question]
--- use manyTill instead of many1
-examQuestions = do qs <- many1 (token question)
+examQuestions = do qs <- manyTill (token question) (token eof)
                    return qs
 
 question :: ReadP Question
--- not handling valid yet
 question = do symbol "---"
               symbol "ENUM"
               valid <- option [] (symbol "NULL")
@@ -94,7 +93,7 @@ question = do symbol "---"
               id <- item D
               skipSpaces
               return Question {number=number, valid=(notNull valid),
-                               enum=(unwords enumWords), items=(ia:ib:ic:id:[])}
+                               enum=(unwords enumWords), items=[ia,ib,ic,id]}
 
 itemHeader :: Letter -> ReadP (Letter, Bool)
 itemHeader l = do letter <- token $ symbol (show l)
@@ -114,6 +113,5 @@ main :: IO ()
 main = do args <- getArgs
           handle <- openFile (head args) ReadMode
           contents <- hGetContents handle
-          B.putStr (encode $ readP_to_S examQuestions contents)
+          B.putStr (encode $ fst $ head $ readP_to_S examQuestions contents)
           hClose handle
---}
