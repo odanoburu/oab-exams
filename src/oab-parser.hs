@@ -8,6 +8,7 @@ import Text.ParserCombinators.ReadP
 import Control.Applicative hiding (many, optional)
 import Control.Monad
 import Data.Aeson
+import Data.List.Split
 import qualified Data.ByteString.Lazy as B
 
 --
@@ -45,7 +46,7 @@ symbol xs = token (string xs)
 --
 -- data types
 data Exam = Exam { year :: Int,
-                   edition :: Int,
+                   edition :: String,
                    questions :: [Question]
                  } deriving (Generic,Show)
 
@@ -76,28 +77,20 @@ instance ToJSON Letter where
 
 --
 -- OAB parsers
-{-
 examQuestions :: ReadP [Question]
 examQuestions = do qs <- manyTill (token question) (token eof)
                    return qs
 
 question :: ReadP Question
-question = do symbol "---"
-              symbol "ENUM"
+question = do symbol "ENUM"
               valid <- option [] (symbol "NULL")
               symbol "Questão"
               number <- natural
               enumWords <- manyTill word (symbol "OPTIONS")
-              ia <- item A
-              ib <- item B
-              ic <- item C
-              id <- item D
+              is <- itemsP
               skipSpaces
               return Question {number=number, valid=(notNull valid),
-                               enum=(unwords enumWords), items=[ia,ib,ic,id]}
--}
-
-example = "A:CORRECT) optar, com prudência e discernimento, por um dos mandatos,\ne renunciar ao outro, resguardando o sigilo profissional.\n\nB) manter com os constituintes contrato de prestação de serviços\njurídicos no interesse da causa, resguardando o sigilo\nprofissional.\n\nC) assumir, com a cautela que lhe é peculiar, o patrocínio de\nambos, em ações individuais.\n\nD) designar, com prudência e cautela, por substabelecimento com\nreservas, um advogado de sua confiança.\n\n---"
+                               enum=(unwords enumWords), items=is}
 
 itemsP :: ReadP [Item]
 itemsP = do
@@ -107,6 +100,12 @@ itemsP = do
   id <- itemD
   return [ia,ib,ic,id]
 
+itemBody :: ReadP () -> ReadP (Bool, String)
+itemBody p = do
+  correct <- itemCorrect
+  itemWords <- manyTill word p
+  return (correct, (unwords itemWords))
+
 itemLetter :: Letter -> ReadP ()
 itemLetter l = do
   symbol (show l)
@@ -115,7 +114,7 @@ itemLetter l = do
 
 itemCorrect :: ReadP Bool
 itemCorrect = do
-  correct <- option [] (symbol "CORRECT)")
+  correct <-  (symbol "CORRECT)") <++ (return []) --option [] (symbol "CORRECT)")
   return (notNull correct)
 
 itemA :: ReadP Item
@@ -123,12 +122,6 @@ itemA = do
   itemLetter A
   (correct, itemWords) <- itemBody $ itemLetter B
   return Item {letter = A, correct = correct, text = itemWords}
-
-itemBody :: ReadP () -> ReadP (Bool, String)
-itemBody p = do
-  correct <- itemCorrect
-  itemWords <- manyTill word p
-  return (correct, (unwords itemWords))
 
 itemBC :: Letter -> ReadP Item
 itemBC l = do
@@ -140,40 +133,20 @@ itemD = do
   (correct, itemWords) <- itemBody $ ((symbol "---") >> return ())
   return Item {letter = D, correct = correct, text = itemWords}
 
-{-
-question :: ReadP Question
-question = do symbol "---"
-              symbol "ENUM"
-              valid <- option [] (symbol "NULL")
-              symbol "Questão"
-              number <- natural
-              enumWords <- manyTill word (symbol "OPTIONS")
-              ia <- item A
-              ib <- item B
-              ic <- item C
-              id <- item D
-              skipSpaces
-              return Question {number=number, valid=(notNull valid),
-                               enum=(unwords enumWords), items=[ia,ib,ic,id]}
-
-itemHeader :: Letter -> ReadP (Letter, Bool)
-itemHeader l = do letter <- symbol (show l)
-                  correct <- option [] (symbol ":CORRECT")
-                  symbol ")"
-                  return (l, (notNull correct))
-
-item :: Letter -> ReadP Item
-item l = do (letter,correct) <- itemHeader l
-            itemWords <- manyTill word (symbol "/ITEM")
-            return Item {letter=letter, correct=correct, text=(unwords itemWords)}
-
 --
 -- main
 
 main :: IO ()
-main = do args <- getArgs
-          handle <- openFile (head args) ReadMode
-          contents <- hGetContents handle
-          B.putStr (encode $ fst $ head $ readP_to_S examQuestions contents)
-          hClose handle
--}
+main = do
+  args <- getArgs
+  let filename = (head args)
+  handle <- openFile filename ReadMode
+  contents <- hGetContents handle
+  let questions = fst $ head $ readP_to_S examQuestions contents
+      yearEdition = splitOn "-" filename
+      (year, edition) = (yearEdition !! 0, yearEdition !! 1)
+  B.putStr
+    (encode $ Exam {year = (read year :: Int), edition = edition, questions = questions})
+  hClose handle
+
+example = "ENUM Questão 1\n\nJúlio e Lauro constituíram o mesmo advogado para,\njuntos, ajuizarem ação de interesse comum. No curso do processo,\nsobrevieram conflitos de interesse entre os constituintes, tendo\nJúlio deixado de concordar com Lauro com relação aos pedidos.\n\nNessa situação hipotética, deve o advogado\n\nOPTIONS\n\nA:CORRECT) optar, com prudência e discernimento, por um dos mandatos,\ne renunciar ao outro, resguardando o sigilo profissional.\n\nB) manter com os constituintes contrato de prestação de serviços\njurídicos no interesse da causa, resguardando o sigilo\nprofissional.\n\nC) assumir, com a cautela que lhe é peculiar, o patrocínio de\nambos, em ações individuais.\n\nD) designar, com prudência e cautela, por substabelecimento com\nreservas, um advogado de sua confiança.\n\n---\nENUM Questão 2\n\nMário, advogado regularmente inscrito na OAB, foi\ncondenado pela prática de crime hediondo e, após a sentença penal\ntransitada em julgado, respondeu a processo disciplinar, tendo\nsofrido, como consequência, penalidade de exclusão da Ordem. \n\nConsiderando a situação hipotética apresentada e o Estatuto da\nAdvocacia e da OAB, assinale a opção correta.\n\nOPTIONS\n\nA) Ainda que se reabilite criminalmente, Mário não poderá mais\nse inscrever na OAB, visto que não preenche o requisito de\nidoneidade moral.\n\nB) Serão considerados inexistentes os atos privativos de\nadvogado praticados por Mário após a exclusão, dado o\nimpedimento do exercício do mandato em razão da sanção\ndisciplinar aplicada.\n\nC) A penalidade de exclusão somente poderia ter sido aplicada\ncaso Mário tivesse recebido três suspensões.\n\nD:CORRECT) Supondo-se que o processo disciplinar tenha ficado paralisado\npor mais de três anos, aguardando o julgamento, a pretensão\nà punibilidade de Mário estaria prescrita e ele não poderia ser\nexcluído da Ordem.\n\n---"
