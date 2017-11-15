@@ -5,11 +5,11 @@ import GHC.Generics
 import System.IO
 import System.Environment
 import Data.Char
+import Text.Parsec.ByteString.Lazy
 import Text.Parsec.Combinator
 import Text.ParserCombinators.Parsec.Char hiding (letter)
-import Text.ParserCombinators.Parsec.Prim
---import Control.Applicative hiding (many, optional)
---import Control.Monad
+import Text.ParserCombinators.Parsec.Prim hiding (Parser, parseFromFile)
+import qualified Data.ByteString.Lazy as B
 import Data.Aeson
 import Data.List.Split
 
@@ -140,12 +140,15 @@ itemD = do
 
 main :: IO ()
 main = do
-  args <- getArgs
-  let filename = (head args)
+  [filename] <- getArgs
   questions <- parseFromFile examQuestions filename
   let yearEdition = splitOn "-" filename
       (year, edition) = (yearEdition !! 0, yearEdition !! 1)
-  putStr
-    (encode $ Exam {year = (read year :: Int), edition = edition, questions = questions})
+  case questions of
+    Left err -> print err
+    Right qs ->
+      B.putStr
+        (encode $
+         Exam {year = (read year :: Int), edition = edition, questions = qs})
 
 example = "ENUM Questão 1\n\nJúlio e Lauro constituíram o mesmo advogado para,\njuntos, ajuizarem ação de interesse comum. No curso do processo,\nsobrevieram conflitos de interesse entre os constituintes, tendo\nJúlio deixado de concordar com Lauro com relação aos pedidos.\n\nNessa situação hipotética, deve o advogado\n\nOPTIONS\n\nA:CORRECT) optar, com prudência e discernimento, por um dos mandatos,\ne renunciar ao outro, resguardando o sigilo profissional.\n\nB) manter com os constituintes contrato de prestação de serviços\njurídicos no interesse da causa, resguardando o sigilo\nprofissional.\n\nC) assumir, com a cautela que lhe é peculiar, o patrocínio de\nambos, em ações individuais.\n\nD) designar, com prudência e cautela, por substabelecimento com\nreservas, um advogado de sua confiança.\n\n---\nENUM Questão 2\n\nMário, advogado regularmente inscrito na OAB, foi\ncondenado pela prática de crime hediondo e, após a sentença penal\ntransitada em julgado, respondeu a processo disciplinar, tendo\nsofrido, como consequência, penalidade de exclusão da Ordem. \n\nConsiderando a situação hipotética apresentada e o Estatuto da\nAdvocacia e da OAB, assinale a opção correta.\n\nOPTIONS\n\nA) Ainda que se reabilite criminalmente, Mário não poderá mais\nse inscrever na OAB, visto que não preenche o requisito de\nidoneidade moral.\n\nB) Serão considerados inexistentes os atos privativos de\nadvogado praticados por Mário após a exclusão, dado o\nimpedimento do exercício do mandato em razão da sanção\ndisciplinar aplicada.\n\nC) A penalidade de exclusão somente poderia ter sido aplicada\ncaso Mário tivesse recebido três suspensões.\n\nD:CORRECT) Supondo-se que o processo disciplinar tenha ficado paralisado\npor mais de três anos, aguardando o julgamento, a pretensão\nà punibilidade de Mário estaria prescrita e ele não poderia ser\nexcluído da Ordem.\n\n---"
