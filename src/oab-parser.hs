@@ -43,6 +43,12 @@ word = do spaces
 symbol :: String -> Parser String
 symbol xs = lexeme (string xs)
 
+manyTill' :: Parser a -> Parser b -> Parser [a]
+manyTill' p end = do
+  result <- manyTill p (lookAhead $ try $ end)
+  end
+  return result
+
 --
 -- data types
 data Exam = Exam { year      :: Int,
@@ -78,17 +84,16 @@ instance ToJSON Letter where
 --
 -- OAB parsers
 examQuestions :: Parser [Question]
-examQuestions = do qs <- manyTill (lexeme question) (lexeme eof)
+examQuestions = do qs <- manyTill' (lexeme question) (lexeme eof)
                    return qs
 
 question :: Parser Question
 question = do symbol "ENUM"
-              valid <- option [] (symbol "NULL")
+              valid <- option [] (string "NULL")
               symbol "Questão"
               number <- natural
-              enumWords <- manyTill word (symbol "OPTIONS")
-              is <- itemsP
-              spaces
+              enumWords <- manyTill' word (string "OPTIONS")
+              is <- lexeme itemsP
               return Question {number=number, valid=(notNull valid),
                                enum=(unwords enumWords), items=is}
 
@@ -103,18 +108,18 @@ itemsP = do
 itemBody :: Parser () -> Parser (Bool, String)
 itemBody p = do
   correct <- itemCorrect
-  itemWords <- manyTill word p
-  return (correct, (unwords itemWords))
+  itemWords <- manyTill' word p
+  return (correct, unwords itemWords)
 
 itemLetter :: Letter -> Parser ()
 itemLetter l = do
-  symbol (show l)
+  string (show l)
   choice [char ')', char ':']
   return ()
 
 itemCorrect :: Parser Bool
 itemCorrect = do
-  correct <- option [] $ symbol "CORRECT)"
+  correct <- option [] $ string "CORRECT)"
   return (notNull correct)
 
 itemA :: Parser Item
@@ -130,7 +135,7 @@ itemBC l = do
 
 itemD :: Parser Item
 itemD = do
-  (correct, itemWords) <- itemBody $ ((symbol "---") >> return ())
+  (correct, itemWords) <- itemBody $ ((string "---") >> return ())
   return Item {letter = D, correct = correct, text = itemWords}
 
 --
@@ -140,8 +145,9 @@ main :: IO ()
 main = do
   [filename] <- getArgs
   result <- parseFromFile examQuestions filename
-  let yearEdition = splitOn "-" filename
-      (year, edition) = (yearEdition !! 0, yearEdition !! 1)
+  let yearEditionExt = splitOn "-" filename
+      (year, editionExt) = (yearEditionExt !! 0, yearEditionExt !! 1)
+      edition = head $ splitOn "." editionExt
   case result of
     Left err -> print err
     Right qs ->

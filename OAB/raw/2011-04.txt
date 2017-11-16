@@ -1,4 +1,3 @@
----
 ENUM Questão 1
 
 Esculápio, advogado, inscrito, há longos anos, na OAB, após aprovação
@@ -2186,3 +2185,4 @@ administrativo.
 
 D) não precisará depositar a multa, pois isso somente será obrigatório
 se desejar ajuizar ação anulatória perante a Justiça do Trabalho.
+---

@@ -1,4 +1,3 @@
----
 ENUM Questão 1 
 
 O prefeito de um determinado município resolve, por decreto municipal,
@@ -1612,9 +1611,9 @@ de Tomás de executar o genitor, Pedro oferece,
 graciosamente, carona ao agente até o local em que ocorre o 
 crime.
 
-OPTIONS
-
 A esse respeito, é correto afirmar que Pedro é 
+
+OPTIONS
 
 A)  coautor do delito, respondendo por homicídio 
 agravado por haver sido praticado contra ascendente.
@@ -2891,3 +2890,4 @@ não pode ser obrigado a aplicar leis estrangeiras.
 D) o juiz brasileiro poderá conhecer e julgar a lide, mas deverá se
 basear na legislação brasileira, pois em litígios envolvendo
 brasileiros e estrangeiros aplica-se a lex fori.
+---

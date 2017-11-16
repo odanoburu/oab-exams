@@ -1,4 +1,3 @@
----
 ENUM Questão 1 
 
 O advogado João, que também é formado em Comunicação 
@@ -2181,3 +2180,4 @@ C) Não há revelia, mas se aplica a confissão.
 
 D) O juiz deve designar audiência de instrução, haja vista 
 tratar-se de ente público. 
+---

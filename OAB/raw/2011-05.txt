@@ -1,4 +1,3 @@
----
 ENUM Questão 1 
 
 Alcides, advogado de longa data, resolve realizar concurso para o
@@ -2189,3 +2188,4 @@ de determinada empresa para que esta seja
 condenada a repassar-lhe as contribuições assistenciais 
 descontadas dos salários dos empregados 
 sindicalizados.  
+---
