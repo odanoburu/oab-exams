@@ -1,6 +1,8 @@
 ---
 ENUM Questão 1 
- 
+
+AREA ETHICS
+
 Matheus é estagiário vinculado ao escritório Renato e 
 Associados. No exercício da sua atividade, por ordem do 
 advogado supervisor, o estagiário acompanha o cliente diretor 
@@ -30,6 +32,8 @@ implica abandono da causa.
 ---
 ENUM Questão 2 
 
+AREA ETHICS
+
 Andrea e Luciano trocam missivas intermitentes, cujo 
 conteúdo diz respeito a processo judicial em que a primeira é 
 autora, e o segundo, seu advogado. A parte contrária, ciente 
@@ -58,6 +62,8 @@ advogado.
 ---
 ENUM Questão 3 
  
+AREA ETHICS
+
 O advogado Antônio de Souza encontra-se preso 
 cautelarmente, em cela comum, por força de decreto de 
 prisão preventiva proferido no âmbito de ação penal a que 
@@ -98,7 +104,9 @@ profissão de advogado.
 
 ---
 ENUM Questão 4 
- 
+
+AREA ETHICS
+
 Ao requerer sua inscrição nos quadros da OAB, Maria assinou 
 e apresentou declaração em que afirmava não exercer cargo 
 incompatível com a advocacia. No entanto, exercia ela ainda o 
@@ -134,7 +142,9 @@ quadros da OAB.
 
 ---
 ENUM Questão 5 
- 
+
+AREA ETHICS
+
 Cláudia, advogada, inicialmente transitou pelo direito privado, 
 com assunção de causas individuais e coletivas. Ao ser 
 contratada por uma associação civil, deparou com questões 
@@ -166,7 +176,9 @@ Estado federado.
 
 ---
 ENUM Questão 6 
- 
+
+AREA ETHICS
+
 Às 15h15, o advogado Armando aguardava, no corredor do 
 fórum, o início de uma audiência criminal designada para  
 as 14h30. A primeira audiência do dia havia sido iniciada no 
@@ -204,6 +216,8 @@ ao atraso da audiência.
 ---
 ENUM Questão 7 
  
+AREA ETHICS
+
 O estagiário Marcos trabalha em determinado escritório de 
 advocacia e participou ativamente da elaboração de 
 determinada peça processual que estava para ser analisada 
@@ -255,6 +269,8 @@ com pena de censura.
 
 ---
 ENUM Questão 8  
+
+AREA ETHICS
  
 Mara é advogada atuante, tendo especialização na área cível. 
 Procurada por um cliente da área empresarial, ela aceita o 
@@ -279,11 +295,13 @@ atuar conjuntamente no processo.
 C) A advogada deve acolher o comando, por ser natural na 
 vida forense a colaboração.  
 
-D:CORRECT) A advogada não é obrigada a aceitar a imposição de seu 
-cliente no caso. 
+D:CORRECT) A advogada não é obrigada a aceitar a imposição de
+seu cliente no caso. 
 
 ---
 ENUM Questão 9 
+
+AREA ETHICS
 
 A advogada Ana integrou o departamento jurídico da empresa 
 XYZ Ltda. e, portanto, participava de reuniões internas, com 
@@ -330,7 +348,9 @@ mesmo quando solicitado pelo cliente.
 
 ---
 ENUM Questão 10 
- 
+
+AREA ETHICS
+
 O advogado Armando alterou o endereço de seu escritório e, 
 para comunicar tal alteração, enviou correspondência a 
 grande número de pessoas, notadamente, seus clientes e 
@@ -359,7 +379,9 @@ tipo de informação.
 
 ---
 ENUM Questão 11 
- 
+
+AREA PHILOSOPHY
+
 O filósofo inglês Jeremy Bentham, em seu livro Uma 
 introdução aos princípios da moral e da legislação, defendeu o 
 princípio da utilidade como fundamento para a Moral e para o 
@@ -388,7 +410,9 @@ pessoas tornarem algo útil.
 
 ---
 ENUM Questão 12  
- 
+
+AREA PHILOSOPHY
+
 O jusfilósofo alemão Gustav Radbruch, após a II Guerra 
 Mundial, escreve, como circular dirigida aos seus alunos de 
 Heidelberg, seu texto “Cinco Minutos de Filosofia do Direito”, 
@@ -418,6 +442,8 @@ segurança.
 
 ---
 ENUM Questão 13 
+
+AREA CONSTITUTIONAL
 
 A Sra. Maria da Silva é participante ativa da AMA-X 
 (Associação de Moradores e Amigos do bairro X). Todos os 
@@ -465,7 +491,9 @@ reuniões em espaço público.
 
 ---
 ENUM Questão 14 
- 
+
+AREA CONSTITUTIONAL
+
 O instituto da intervenção é de extrema excepcionalidade, 
 razão pela qual restam minuciosamente delineadas as 
 hipóteses na CRFB/88. 
@@ -504,7 +532,9 @@ o pagamento da dívida fundada.
 
 ---
 ENUM Questão 15 
- 
+
+AREA CONSTITUTIONAL
+
 O estado de defesa e o estado de sítio são tidos como 
 legalidades extraordinárias, verdadeiras excepcionalidades 
 que possibilitam inclusive a suspensão de determinas 
@@ -536,6 +566,8 @@ coercitivas, para sua salvaguarda.
 
 ---
 ENUM Questão 16 
+
+AREA CONSTITUTIONAL
  
 Deise pretende ter acesso a informações pertinentes à 
 atividade estatal que estão em poder de específico órgão 
@@ -559,7 +591,9 @@ informações estatais.
  
 ---
 ENUM Questão 17 
- 
+
+AREA CONSTITUTIONAL
+
 Isabella promove ação popular em face do Município X, por 
 entender que determinados gastos realizados estariam 
 causando graves prejuízos ao patrimônio público. O pedido 
@@ -587,7 +621,9 @@ a má-fé do autor popular.
 
 ---
 ENUM Questão 18 
- 
+
+AREA CONSTITUTIONAL
+
 Maria da Silva, deputada federal integrante do partido Alfa, 
 vem a ter projeto de sua iniciativa aprovado, com apoio de 
 outros partidos políticos. Para sua surpresa, o texto do seu 
@@ -615,7 +651,9 @@ absoluta de cada uma delas.
 
 ---
 ENUM Questão 19
- 
+
+AREA CONSTITUTIONAL
+
 No que tange às disposições legais regulamentadoras da ação 
 direta de inconstitucionalidade, da ação direta de 
 inconstitucionalidade por omissão e da ação declaratória de 
@@ -649,6 +687,8 @@ rescisória.
 ---
 ENUM Questão 20 
  
+AREA HUMAN-RIGHTS
+
 Em maio de 1996, o Brasil instituiu seu primeiro Programa 
 Nacional de Direitos Humanos (PNDH 1). Na Introdução do 
 PNDH 2, adotado em maio de 2002, vem escrito o seguinte: 
@@ -688,6 +728,8 @@ Constituição Federal.
 ---
 ENUM Questão 21 
 
+AREA HUMAN-RIGHTS
+
 Em 2014, em pelo menos 24 Estados do Brasil, estavam 
 cadastradas mais de 3.500 comunidades quilombolas.  
 As comunidades quilombolas são grupos étnico-raciais, 
@@ -711,6 +753,8 @@ D:CORRECT) propriedade definitiva das terras que estejam ocupando.
  
 ---
 ENUM Questão 22 
+
+AREA HUMAN-RIGHTS
 
 A história recente da república brasileira conta com capítulos 
 autoritários e violentos. Para restituir o direito à memória e 
@@ -747,6 +791,8 @@ histórica, bem como promover a reconciliação nacional.
 ---
 ENUM Questão 23 
 
+AREA HUMAN-RIGHTS
+
 Na hipótese de inadimplência do Estado brasileiro, condenado 
 ao pagamento de quantia certa pela Corte Interamericana de 
 Direitos Humanos, deverá o interessado 
@@ -770,6 +816,8 @@ nomear bens à penhora.
 
 ---
 ENUM Questão 24 
+
+AREA INTERNATIONAL
  
 A respeito da condição jurídica do estrangeiro, disciplinada 
 pela Lei n. 6.815/80, assinale a afirmativa correta. 
@@ -794,7 +842,9 @@ Estado requerente, perante tribunal ou juízo de exceção.
 
 ---
 ENUM Questão 25 
- 
+
+AREA TAXES
+
 Visando a proteger a indústria de tecnologia da informação, o 
 governo federal baixou medida, mediante decreto, em que 
 majora de 15% para 20% a alíquota do Imposto sobre a 
@@ -817,7 +867,9 @@ D) Deve observar o princípio da anterioridade.
  
 ---
 ENUM Questão 26 
- 
+
+AREA TAXES
+
 Empresa X, constituída em 1980, entrou com ação na Justiça 
 Federal impugnando a cobrança da Contribuição Sobre o Lucro 
 – CSLL, alegando que, apesar de prevista no Art. 195, I, c, da 
@@ -849,6 +901,8 @@ confisco prevista no Art. 150, IV, da CRFB.
 
 ---
 ENUM Questão 27 
+
+AREA TAXES
  
 Lei municipal que dispõe sobre o Imposto sobre a Propriedade 
 Predial e Territorial Urbana – IPTU − estabelece a 
@@ -874,6 +928,8 @@ pelo saldo.
 
 ---
 ENUM Questão 28 
+
+AREA TAXES
 
 Presume-se fraudulenta a alienação ou oneração de bens ou 
 rendas por sujeito passivo em débito para com a Fazenda 
@@ -901,7 +957,9 @@ contribuinte.
 
 ---
 ENUM Questão 29 
- 
+
+AREA ADMINISTRATIVE
+
 Caso o Estado delegue a reforma, manutenção e operação de 
 uma rodovia estadual à iniciativa privada, com a previsão de 
 que a amortização dos investimentos e a remuneração do 
@@ -921,7 +979,9 @@ obra pública.
 
 ---
 ENUM Questão 30 
- 
+
+AREA ADMINISTRATIVE
+
 Numerosos professores, em recente reunião da categoria, 
 queixaram-se da falta de interesse dos alunos pela cultura 
 nacional. O Sindicato dos Professores de Colégios Particulares 
@@ -955,6 +1015,8 @@ parceria com o poder público.
 ---
 ENUM Questão 31  
 
+AREA ADMINISTRATIVE 
+
 Manolo, servidor público federal, obteve a concessão de 
 aposentadoria por invalidez após ter sido atestado, por junta 
 médica oficial, o surgimento de doença que o impossibilitava 
@@ -979,7 +1041,9 @@ D) readaptação.
  
 ---
 ENUM Questão 32 
- 
+
+AREA ADMINISTRATIVE
+
 Cinco empresas que, somadas, dominam 90% (noventa por 
 cento) da produção metalúrgica nacional acordam, 
 secretamente, a redução da oferta de bens por elas 
@@ -1006,7 +1070,9 @@ segurança nacional ou a relevante interesse coletivo.
 
 ---
 ENUM Questão 33 
- 
+
+AREA ADMINISTRATIVE 
+
 A Secretaria de Defesa do Meio Ambiente do Estado X lavrou 
 auto de infração, cominando multa no valor de R$ 15.000,00 
 (quinze mil reais) à empresa Explora, em razão da instalação 
@@ -1038,6 +1104,8 @@ quitação da dívida.
 
 ---
 ENUM Questão 34 
+
+AREA ADMINISTRATIVE 
 
 Caio, chefe de gabinete do prefeito do município X, ocupante 
 exclusivamente de cargo em comissão, conhecendo os planos 
@@ -1076,7 +1144,9 @@ ocupante de cargo em comissão.
 
 ---
 ENUM Questão 35 
- 
+
+AREA ADMINISTRATIVE 
+
 Kellen, empreendedora individual, obtém, junto ao órgão 
 municipal, licença de instalação de uma fábrica de calçados.  
 A respeito da hipótese formulada, assinale a afirmativa 
@@ -1105,7 +1175,9 @@ licenças anteriores.
 
 ---
 ENUM Questão 36 
- 
+
+AREA ENVIRONMENTAL 
+
 A definição dos espaços territoriais especialmente protegidos 
 é fundamental para a manutenção dos processos ecológicos. 
 Sobre o instituto da Reserva Legal, de acordo com o Novo 
@@ -1130,7 +1202,9 @@ da biodiversidade.
 
 ---
 ENUM Questão 37 
- 
+
+AREA CIVIL
+
 Sara e Bernardo doaram o imóvel que lhes pertencia a Miguel, 
 ficando o imóvel gravado com usufruto em favor dos 
 doadores. 
@@ -1154,7 +1228,9 @@ produzida contra a posse da coisa.
 
 ---
 ENUM Questão 38 
- 
+
+AREA CIVIL
+
 João é locatário de um imóvel residencial de propriedade de 
 Marcela, pagando mensalmente o aluguel por meio da 
 entrega pessoal da quantia ajustada. O locatário tomou 
@@ -1187,7 +1263,9 @@ estando estes obrigados a aceitar.
 
 ---
 ENUM Questão 39 
- 
+
+AREA CIVIL
+
 Marcos e Paula, casados, pais de Isabel e Marcelo, menores 
 impúberes, faleceram em um grave acidente automobilístico. 
 Em decorrência deste fato, Pedro, avô materno nomeado 
@@ -1223,7 +1301,9 @@ judicialmente.
 
 ---
 ENUM Questão 40 
- 
+
+AREA CIVIL
+
 Raul, cidadão brasileiro, no meio de uma semana comum, 
 desaparece sem deixar qualquer notícia para sua ex-esposa e 
 filhos, sem deixar cartas ou qualquer indicação sobre seu 
@@ -1294,7 +1374,9 @@ achar suficiente.
 
 ---
 ENUM Questão 42 
- 
+
+AREA CIVIL
+
 Segundo o Código Civil de 2002, acerca do direito de 
 representação, instituto do Direito das Sucessões, assinale a 
 opção correta. 
@@ -1319,7 +1401,9 @@ sucessão legítima quanto na testamentária.
 
 ---
 ENUM Questão 43 
- 
+
+AREA CIVIL
+
 Maria Clara, então com dezoito anos, animada com a 
 conquista da carteira de habilitação, decide retirar suas 
 economias da poupança para adquirir um automóvel. Por 
@@ -1363,7 +1447,9 @@ diminuição no preço, o vício no contrato estará sanado.
 
 ---
 ENUM Questão 44 
- 
+
+AREA CHILDREN
+
 A Declaração Universal dos Direitos da Criança reconhece 
 como necessária ao desenvolvimento completo e harmonioso 
 das crianças e dos adolescentes a necessidade de cuidados e 
@@ -1413,6 +1499,8 @@ Com base no caso apresentado, a partir do que dispõe o
 Estatuto da Criança e do Adolescente, assinale a opção 
 correta. 
 
+AREA CHILDREN
+
 OPTIONS
 
 A) Trata-se de infração penal, motivo pelo qual, sem prejuízo 
@@ -1436,7 +1524,9 @@ judiciária, a imediato fechamento por até quinze dias.
 
 ---
 ENUM Questão 46 
- 
+
+AREA CONSUMER
+
 Um homem foi submetido a cirurgia para remoção de cálculos 
 renais em hospital privado. A intervenção foi realizada por 
 equipe médica não integrante dos quadros de funcionários do 
@@ -1476,7 +1566,9 @@ objetiva.
 
 ---
 ENUM Questão 47 
- 
+
+AREA CONSUMER
+
 O fornecimento de serviços e de produtos é atividade 
 desenvolvida nas mais diversas modalidades, como ocorre nos 
 serviços de crédito e financiamento, regidos pela norma 
@@ -1509,7 +1601,9 @@ suporte cumulativamente a incidência dos juros de mora.
 
 ---
 ENUM Questão 48 
- 
+
+AREA BUSINESS
+
 A Comissão de Valores Mobiliários poderá impor aos 
 infratores de suas Resoluções, das normas da Lei n. 6.404/76 
 (Lei das Sociedades por Ações) e da Lei n. 6.385/76 (Lei do 
@@ -1530,7 +1624,9 @@ D) Bolsa de Valores.
  
 ---
 ENUM Questão 49 
- 
+
+AREA BUSINESS
+
 Na duplicata de compra e venda, entende-se por protesto por 
 indicações do portador aquele que é lavrado pelo tabelião de 
 protestos 
@@ -1551,7 +1647,9 @@ a sustação do protesto.
 
 ---
 ENUM Questão 50 
- 
+
+AREA BUSINESS
+
 A alienação fiduciária, regulada pela Lei n. 9.514/1997, é o 
 negócio jurídico pelo qual o devedor, ou fiduciante, com o 
 escopo de garantia, contrata a transferência ao credor, ou 
@@ -1577,7 +1675,9 @@ independentemente da anuência do fiduciário.
 
 ---
 ENUM Questão 51 
- 
+
+AREA BUSINESS
+
 Mariana, Januária e Cristina decidiram constituir uma 
 sociedade em conta de participação, sendo a primeira sócia 
 ostensiva e as demais sócias participantes. 
@@ -1605,6 +1705,8 @@ não personificada.
 
 ---
 ENUM Questão 52 
+
+AREA BUSINESS
  
 Passa Sete Serviços Médicos S/A apresentou a seus credores 
 plano de recuperação extrajudicial, que obteve a aprovação 
@@ -1641,7 +1743,9 @@ bem objeto de garantia real.
 
 ---
 ENUM Questão 53 
- 
+
+AREA CIVIL-PROCEDURE
+
 A respeito da participação do Ministério Público no Processo 
 Civil, assinale a opção correta. 
 
@@ -1663,7 +1767,9 @@ verdade de fatos relevantes para a causa.
 
 ---
 ENUM Questão 54 
- 
+
+AREA CIVIL-PROCEDURE
+
 O Mandado de Segurança é a ferramenta jurídica hábil para 
 proteger direito líquido e certo, não amparado por habeas 
 corpus ou habeas data, quando, ilegalmente ou com abuso de 
@@ -1692,6 +1798,8 @@ qualquer outro meio eletrônico.
 
 ---
 ENUM Questão 55 
+
+AREA CIVIL-PROCEDURE
 
 O direito processual brasileiro, em sua origem, possuía um 
 caráter eminentemente individualista, estando filiado às 
@@ -1728,7 +1836,9 @@ documento que possui eficácia de título executivo judicial.
 
 ---
 ENUM Questão 56 
- 
+
+AREA CIVIL-PROCEDURE
+
 Juliana e Marcos são casados sob o regime da comunhão 
 parcial de bens. Entretanto, tornada impossível a vida em 
 comum e diante da existência de filhos menores do casal, 
@@ -1761,7 +1871,9 @@ conforme Art. 267, X, do CPC.
 
 ---
 ENUM Questão 57 
- 
+
+AREA CIVIL-PROCEDURE
+
 Lino ajuizou ação de cobrança pelo rito ordinário em face de 
 Paulo, pleiteando o pagamento de R$ 100.000,00 (cem mil 
 reais). Em contestação, Paulo alegou pagamento integral da 
@@ -1794,7 +1906,9 @@ exceções de impedimento e suspeição.
 
 ---
 ENUM Questão 58 
- 
+
+AREA CIVIL-PROCEDURE
+
 Os irmãos Rafael e Daniela são proprietários de um imóvel na 
 Av. São Sebastião, n. 20. Eles realizaram um contrato de 
 locação com Joana, estudante, por prazo indeterminado. Após 
@@ -1827,7 +1941,9 @@ para os dois irmãos.
 
 ---
 ENUM Questão 59 
- 
+
+AREA CRIMINAL 
+
 Jaime, candidato à prefeitura da cidade X, durante o horário 
 de propaganda eleitoral em rede televisiva, proferiu as 
 seguintes palavras: “O atual prefeito e candidato à reeleição, 
@@ -1851,7 +1967,9 @@ D) Injúria, previsto no Código Penal.
  
 ---
 ENUM Questão 60 
- 
+
+AREA CRIMINAL 
+
 José, mestre de obras, foi contratado para realizar a reforma 
 de um escritório no centro da cidade de Niterói. Durante a 
 reforma, José, sem analisar a planta do edifício, derruba uma 
@@ -1882,6 +2000,8 @@ aumento de pena em razão da morte dolosa da vítima.
 ---
 ENUM Questão 61 
 
+AREA CRIMINAL 
+
 Isadora, mãe da adolescente Larissa, de 12 anos de idade, saiu 
 um pouco mais cedo do trabalho e, ao chegar à sua casa, da 
 janela da sala, vê seu companheiro, Frederico, mantendo 
@@ -1909,6 +2029,8 @@ D) omissivo por comissão.
 
 ---
 ENUM Questão 62 
+
+AREA CRIMINAL 
  
 Wallace, hemofílico, foi atingido por um golpe de faca em uma 
 região não letal do corpo. Júlio, autor da facada, que não tinha 
@@ -1944,6 +2066,8 @@ sim, por homicídio culposo.
 
 ---
 ENUM Questão 63 
+
+AREA CRIMINAL 
  
 O Presidente da República, diante da nova onda de protestos, 
 decide, por meio de medida provisória, criar um novo tipo 
@@ -1972,6 +2096,8 @@ penal.
 ---
 ENUM Questão 64 
  
+AREA CRIMINAL 
+
 Eslow, holandês e usuário de maconha, que nunca antes havia 
 feito uma viagem internacional, veio ao Brasil para a Copa do 
 Mundo. 
@@ -2004,6 +2130,8 @@ impossível, razão pela qual deve ser absolvido.
 
 ---
 ENUM Questão 65 
+
+AREA CRIMINAL-PROCEDURE
 
 O Delegado de Polícia, desconfiado de que Fabiano é o líder de 
 uma quadrilha que realiza assaltos à mão armada na região, 
@@ -2046,7 +2174,9 @@ justa causa para o ajuizamento da ação penal.
 
 ---
 ENUM Questão 66 
- 
+
+AREA CRIMINAL-PROCEDURE
+
 Eduardo foi denunciado pelo crime de estupro de vulnerável. 
 Durante a instrução, negou a autoria do crime, afirmando 
 estar, na época dos fatos, no município “C”, distante dois 
@@ -2097,6 +2227,8 @@ A partir do caso narrado, assinale a opção correta.
  
 OPTIONS
 
+AREA CRIMINAL-PROCEDURE
+
 A) A hipótese é de emendatio libelli e o juiz deve absolver o 
 réu relativamente ao crime que lhe foi imputado.  
 
@@ -2116,7 +2248,9 @@ imputação que lhe foi originalmente atribuída.
 
 ---
 ENUM Questão 68 
- 
+
+AREA CRIMINAL-PROCEDURE
+
 Washington foi condenado à pena de 5 anos e 4 meses de 
 reclusão e ao pagamento de 10 dias-multa pela prática do 
 delito de roubo (Art. 157, do CP), em regime semiaberto, 
@@ -2157,7 +2291,9 @@ regime aberto.
 
 ---
 ENUM Questão 69 
- 
+
+AREA CRIMINAL-PROCEDURE
+
 Fábio, vítima de calúnia realizada por Renato e Abel, decide 
 mover ação penal privada em face de ambos. Após o 
 ajuizamento da ação, os autos são encaminhados ao 
@@ -2183,7 +2319,9 @@ poderá desistir da ação penal apenas em face de Renato.
 
 ---
 ENUM Questão 70 
- 
+
+AREA LABOUR
+
 Jefferson é balconista numa loja e, por determinação do 
 empregador e necessidade do serviço, precisou trabalhar  
 8 horas em um domingo. Agora Jefferson fará, na mesma 
@@ -2212,7 +2350,9 @@ nelas as horas extraordinárias.
 
 ---
 ENUM Questão 71 
- 
+
+AREA LABOUR
+
 Em 2012, Maria Júlia foi contratada como estagiária de direito 
 em uma empresa pública federal, que explora atividade 
 bancária. Sua tarefa consistia em permanecer parte do tempo 
@@ -2246,7 +2386,9 @@ público.
 
 ---
 ENUM Questão 72 
- 
+
+AREA LABOUR
+
 Jerônimo trabalha na Metalúrgica Pereira como soldador, com 
 a seguinte jornada: de 2ª a 6ª-feira, das 9h às 18h, com  
 quatro intervalos diários de quinze minutos, destinados à 
@@ -2274,6 +2416,8 @@ dispensada de pagar a hora extra.
 
 ---
 ENUM Questão 73 
+
+AREA LABOUR
 
 O novo prefeito de Tribobó do Oeste decidiu contratar  
 quatro coveiros para o cemitério público da cidade, o que fez 
@@ -2303,6 +2447,8 @@ adquirido pelo ano trabalhado.
 ---
 ENUM Questão 74 
 
+AREA LABOUR
+
 Dentre as opções listadas a seguir, assinale aquela que indica 
 o empregado que já tem os dias de repouso remunerados em 
 seu salário, sem que haja o acréscimo da remuneração do seu 
@@ -2321,6 +2467,8 @@ D) Diego, que é empregado comissionista puro.
 ---
 ENUM Questão 75 
  
+AREA LABOUR
+
 Joana trabalha numa empresa que se dedica a dar assessoria 
 àqueles que desejam emagrecer. Em razão de problemas 
 familiares, Joana foi acometida por um distúrbio alimentar e 
@@ -2351,7 +2499,9 @@ estabilidade.
 
 ---
 ENUM Questão 76 
- 
+
+AREA LABOUR-PROCEDURE
+
 Determinada audiência, designada para as 10h, só teve início 
 às 12h, ocasião em que o preposto e o advogado da empresa 
 já tinham se ausentado. A pauta de audiências fora 
@@ -2377,6 +2527,8 @@ aplicação da revelia e confissão à parte ré.
 
 ---
 ENUM Questão 77 
+
+AREA LABOUR-PROCEDURE
 
 Em ação que tramitou sob o procedimento sumaríssimo, o juiz 
 decidiu determinado pedido de forma contrária ao disposto 
@@ -2404,7 +2556,9 @@ princípio do duplo grau de jurisdição obrigatório.
 
 ---
 ENUM Questão 78 
- 
+
+AREA LABOUR-PROCEDURE
+
 Plínio, empregado da Padaria Pão Bom Ltda., insatisfeito com 
 o trabalho, procurou seu empregador pedindo para ser 
 mandado embora. O empregador aceitou a proposta, desde 
@@ -2434,7 +2588,9 @@ homologação do acordo.
 
 ---
 ENUM Questão 79 
- 
+
+AREA LABOUR-PROCEDURE
+
 Geraldo requereu na sua petição inicial, e teve deferida, a 
 concessão de tutela antecipada para sua imediata 
 reintegração, haja vista ser dirigente sindical. O ex-empregador,
@@ -2467,7 +2623,9 @@ agora contra a tutela antecipada concedida na sentença.
 
 ---
 ENUM Questão 80 
- 
+
+AREA LABOUR-PROCEDURE
+
 Sandro Vieira ajuizou reclamação trabalhista contra a empresa 
 Trianon Bebidas e Energéticos Ltda. pleiteando o pagamento 
 de horas extras, pois alegou trabalhar de 2ª feira a sábado, das 
