@@ -1,1 +1,2 @@
 ./OAB/raw/*.txt linguist-language=Text
+./OAB/own/*.conllu linguist-language=Text
