@@ -1,0 +1,4 @@
+OAB/raw/*.txt linguist-language=Text
+OAB/own/*.conllu linguist-language=Text
+src/freeling_pythonAPI.cxx linguist-vendored
+src/_freeling.so linguist-vendored
